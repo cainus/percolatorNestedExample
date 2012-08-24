@@ -22,6 +22,8 @@ server.routeDirectory(__dirname + '/resources', function(err){
   if (err) {console.dir(err);throw err;}
   server.listen(function(err){
     console.log('Percolator running on ' + server.port);
+    console.log("database: ");
+    console.log(users);
   });
 });
 

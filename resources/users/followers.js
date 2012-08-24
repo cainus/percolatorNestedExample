@@ -30,14 +30,12 @@ exports.handler = new Resource({
                    // TODO I shouldn't have to append user.id to a
                    // string for this to work
                   self : { href :
-                      that.uri.absolute(that.uri.get('users*', {'users' : '' + user.id}))
+                      that.uri.get('users*', {'users' : '' + user.id})
                     }
                   }
                };
     });
     var parentLink = this.uri.get('users*', {'users' : '' + this.uri.param('users')});
-    // TODO this.uri.get() should return an absolute URL
-    parentLink = this.uri.absolute(parentLink);
     var links = {
       self : { href : this.uri.self()},
       parent : { href : parentLink}
